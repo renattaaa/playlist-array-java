@@ -35,5 +35,22 @@ public class PlaylistArray {
         size++;
 
         System.out.println("Song added successfully!");
+
+        public void tampilkanSemuaLagu() {
+    
+    
+    if (size == 0) {
+        System.out.println("Playlist kosong!");
+        return;
+    }
+
+    System.out.println("\n=== DAFTAR LAGU ===");
+
+  
+    for (int i = 0; i < size; i++) {
+        System.out.print((i + 1) + ". ");
+        daftarLagu[i].tampilkanInfo();
+    }
+}
     }
 }
