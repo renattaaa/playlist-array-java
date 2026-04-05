@@ -8,16 +8,13 @@ public class PlaylistArray {
     private Scanner input = new Scanner(System.in);
 
     // INSERTION METHOD 
-    // Method to add a new song into the array
     public void tambahLagu() {
 
-        // Check if array is full
         if (size == daftarLagu.length) {
             System.out.println("Playlist is full! Maximum 10 songs.");
             return;
         }
 
-        // Input from user
         System.out.print("Enter song title: ");
         String judul = input.nextLine();
 
@@ -26,19 +23,15 @@ public class PlaylistArray {
 
         System.out.print("Enter duration (minutes): ");
         double durasi = input.nextDouble();
-        input.nextLine(); // clear buffer
+        input.nextLine();
 
-        // Insert data into array
         daftarLagu[size] = new Lagu(judul, artis, durasi);
-
-        // Increase size
         size++;
 
         System.out.println("Song added successfully!");
-
-      
     }
-public void tampilkanSemuaLagu() {
+
+    public void tampilkanSemuaLagu() {
 
         if (size == 0) {
             System.out.println("Playlist kosong!");
@@ -50,6 +43,40 @@ public void tampilkanSemuaLagu() {
         for (int i = 0; i < size; i++) {
             System.out.print((i + 1) + ". ");
             daftarLagu[i].tampilkanInfo();
+        }
+    }
+
+    //DELETION METHOD 
+    public void hapusLagu() {
+
+        if (size == 0) {
+            System.out.println("Playlist kosong, tidak ada lagu yang bisa dihapus.");
+            return;
+        }
+
+        System.out.print("Masukkan judul lagu yang ingin dihapus: ");
+        String judulHapus = input.nextLine();
+
+        boolean ditemukan = false;
+
+        for (int i = 0; i < size; i++) {
+            if (daftarLagu[i].getJudul().equalsIgnoreCase(judulHapus)) {
+
+                for (int j = i; j < size - 1; j++) {
+                    daftarLagu[j] = daftarLagu[j + 1];
+                }
+
+                daftarLagu[size - 1] = null;
+                size--;
+
+                System.out.println("Lagu berhasil dihapus!");
+                ditemukan = true;
+                break;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Lagu tidak ditemukan di playlist.");
         }
     }
 }
