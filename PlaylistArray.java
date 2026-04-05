@@ -7,7 +7,7 @@
  *  1. DAFFA FATHUR RAHMAN - 2902692586 - Searching
  *  2. HENDRIKUS AVERO WIDARTO - 2902734664 - Insertion
  *  3. DUSTIN BALLQIS SAPUTRA - 2902730445 - Traversal
- *  4. RENATA RAMADHANYANDRA - 2902696426 - Main Program + Sorting + Class Lagu
+ *  4. RENATA RAMADHANYANDRA - 2902696426 - Main Program + Sorting + Class Lagu + Documentation
  *  5. NAZIF ALFARIZI - 2902726914 - Deletion
  * ============================================================
  */
